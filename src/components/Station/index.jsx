@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
+//import callApi from "../../api"
+
 import {MDCDataTable} from '@material/data-table';
 import StationItem from '../Station/StationItem'
 
 import {connect} from "react-redux"
-import {getStations} from "../../actions/stations"
+//import {getStations} from "../../actions/stations"
+
 
 class Station extends Component {
     constructor(props) {
@@ -12,24 +15,6 @@ class Station extends Component {
         this.state = {
             stations: []
         }
-    }
-
-    componentDidMount() {
-        // console.log("componentDidMount")
-        // callApi("/stations").getItems()
-        //     .then(stations => {
-        //         this.setState({stations})
-        //     })
-        this.props.getStations()
-        // .mdc-data-table phai ton tai truoc, thi dom moi query duoc. nen phai render truowc
-        // nen de day de chay sau khi render table o render()
-        
-        const dataTable = new MDCDataTable(document.querySelector('.mdc-data-table'));
-        
-    }
-
-    componentWillMount() {
-        console.log("componentWillMount")
     }
     
     // render props technique
